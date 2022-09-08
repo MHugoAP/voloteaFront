@@ -1,6 +1,8 @@
 package com.speedup.qa.stepdefinition;
 
-import com.speedup.qa.models.DataOutline;
+import com.speedup.qa.questions.SelectAdult;
+import com.speedup.qa.questions.SelectBaby;
+import com.speedup.qa.questions.SelectChild;
 import com.speedup.qa.task.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -12,12 +14,9 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.Managed;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class passagerStepDefinition extends PageObject {
     @Managed
@@ -61,6 +60,8 @@ public class passagerStepDefinition extends PageObject {
 
     @Then("^validate that the number of passengers is well selected$")
     public void validateThatTheNumberOfPassengersIsWellSelected() {
-
+        System.out.println("Selected Adults on the website " + SelectAdult.nessageSelectAdult().answeredBy(theActorInTheSpotlight()));
+        System.out.println("Selected Children on the website " + SelectChild.messageSelectChild().answeredBy(theActorInTheSpotlight()));
+        System.out.println("Selected Babies on the website " + SelectBaby.messageSelectBaby().answeredBy(theActorInTheSpotlight()));
     }
 }

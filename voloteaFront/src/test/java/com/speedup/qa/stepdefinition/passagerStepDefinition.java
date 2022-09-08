@@ -14,7 +14,9 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.Managed;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
@@ -41,6 +43,7 @@ public class passagerStepDefinition extends PageObject {
 
     @When("^the user clicks the plus button to select more passengers '(\\d+)', '(\\d+)', '(\\d+)'$")
     public void theUserClicksThePlusButtonToSelectMorePassengers(int arg1, int arg2, int arg3) {
+        int total = arg1 + arg2;
 
         for (int i = 1; i < arg1; i++) {
             OnStage.theActorInTheSpotlight().attemptsTo(Adult.adult());
@@ -55,6 +58,11 @@ public class passagerStepDefinition extends PageObject {
         for (int i = 0; i < arg3; i++) {
             OnStage.theActorInTheSpotlight().attemptsTo(Baby.baby());
             //OnStage.theActorInTheSpotlight().attemptsTo(BabySecond.babySecond());
+        }
+
+        if (total > 9 || arg1 > 9 || arg2 > 9){
+            Boolean existeElemento = myBrowser.findElements(By.className("v7-rounded v7-rounded--feedback")).size() != 1;
+            System.out.println("It is possible to make a group reservation " + existeElemento);
         }
     }
 

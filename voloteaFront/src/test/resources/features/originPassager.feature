@@ -9,7 +9,7 @@ Feature: Enter Origin Destiny
     And accept cookies and selct the button Passagers
     When the user clicks the plus button to select more passengers '<adult>', '<child>', '<baby>'
     When we select the origin and destination <origin>, <destiny>
-    Then we validate the selected routes <origin> <destiny>
+    Then we validate the selected routes <origin>, <destiny>
 
     Examples:
       | adult | child | baby | origin     | destiny    |

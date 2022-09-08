@@ -41,23 +41,24 @@ A small introduction of the installation
 ***
 ### project-structure
 The project will have this structure
-voloteaFront > src > main > java > com.speedup.qa > interactions
-					                              > models > class.java (all the .java classes that will have the constructors, getter and setter)
 
-                                                  > questions > class.javs (all the .java classes that will have the objective of validating and/or verifying that the tasks are correct)
+            voloteaFront > src > main > java > com.speedup.qa > interactions
+					                                          > models > class.java (all the .java classes that will have the constructors, getter and setter)
 
-                                                  > tasks > class.java (all the .java classes that will have the objective of carrying out the tasks that a "user" has to carry out)
+                                                              > questions > class.javs (all the .java classes that will have the objective of validating and/or verifying that the tasks are correct)
 
-                                                  > userinterface > class.java (all the .java classes that will have the objective of having the locators that we are going to implement)
+                                                              > tasks > class.java (all the .java classes that will have the objective of carrying out the tasks that a "user" has to carry out)
 
-		                    test > java > com.speedup.qa  > runners > class.java (all the .java that will be used to execute the feature and 
+                                                              > userinterface > class.java (all the .java classes that will have the objective of having the locators that we are going to implement)
+
+		                        test > java > com.speedup.qa  > runners > class.java (all the .java that will be used to execute the feature and 
                                                                       translate from the gherkin language to java)
-                                                          > stepdefiniton > class.java (all the steps to implement such as the given, when and then)
-                                 > resource > features > NameFeature.feature (all .features to be used)
+                                                              > stepdefiniton > class.java (all the steps to implement such as the given, when and then)
+                                     > resource > features > NameFeature.feature (all .features to be used)
                                                         
-             chromedrive.exe (executable file for functionality when opening the browser)
-             pom.xml (all the necessary dependencies that were implemented in the project)
-             serenity.properties (serenity basic configuration)
+                          chromedrive.exe (executable file for functionality when opening the browser)
+                          pom.xml (all the necessary dependencies that were implemented in the project)
+                          serenity.properties (serenity basic configuration)
 ***
 ### feature-execution
 In order to execute the features, you need an execution order in the runners, its correct execution would be:

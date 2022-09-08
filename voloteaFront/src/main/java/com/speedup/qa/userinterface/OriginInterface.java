@@ -8,7 +8,6 @@ public class OriginInterface {
     public static final Target CLIC_WRITE_ORIGIN = Target
             .the("Write the origin")
             .located(By.xpath("//input[@id='origin']"));
-        //.located(By.className("v7-sf__group-item v7-sf__group-item--origin v7-is-focused"));
 
     public static final Target WRITE_ORIGIN = Target
             .the("Write the origin")
@@ -17,9 +16,14 @@ public class OriginInterface {
     public static final Target CLIC_WRITE_DESTINY = Target
             .the("Write the origin")
             .located(By.xpath("//input[@id='destination']"));
-    // .located(By.className("v7-sf__group-item v7-sf__group-item--destination v7-is-focused"));
 
     public static final Target WRITE_DESTINY = Target
             .the("Write the origin")
             .located(By.className("v7-sf__input v7-is-focused"));
+
+    public static final By VALIDATE_NUMBER_ADULT = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[1]");
+
+    public static final By VALIDATE_NUMBER_CHILD = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[2]");
+
+    public static final By VALIDATE_NUMBER_BABY = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[3]");
 }

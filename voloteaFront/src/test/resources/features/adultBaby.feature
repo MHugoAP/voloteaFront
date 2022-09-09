@@ -8,7 +8,7 @@ Feature: Enter Origin Destiny
     Given enter the volotea official page
     And accept cookies and selct the button Passagers
     When the user clicks the plus button to select more passengers '<adult>', '<baby>'
-    Then we validate the number of passengers
+    Then we validate the number of passengers Reservas de grupos
 
     Examples:
       | adult | baby |

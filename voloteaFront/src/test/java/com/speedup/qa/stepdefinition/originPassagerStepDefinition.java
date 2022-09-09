@@ -1,10 +1,8 @@
 package com.speedup.qa.stepdefinition;
 
-import com.speedup.qa.models.DataCenter;
 import com.speedup.qa.models.DestinyData;
 import com.speedup.qa.models.OriginData;
-import com.speedup.qa.questions.DestinyValidate;
-import com.speedup.qa.questions.OriginValidate;
+import com.speedup.qa.questions.*;
 import com.speedup.qa.task.DestinyPassager;
 import com.speedup.qa.task.OriginPassager;
 import cucumber.api.java.en.Then;
@@ -12,7 +10,7 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 
-import java.util.List;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class originPassagerStepDefinition {
 
@@ -23,11 +21,9 @@ public class originPassagerStepDefinition {
 
     }
 
-    @Then("^we validate the selected routes (.*)$")
+    @Then("^we validate the selected routes$")
     public void weValidateTheSelectedRoutes() {
-
-        //OriginData originData, DestinyData destinyData
-        //OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(OriginValidate.messageOriginValidate(), org.hamcrest.Matchers.is(originData)));
-        //OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(DestinyValidate.messageDestinyValidate(), org.hamcrest.Matchers.is(destinyData)));
+        System.out.println("You correctly selected your origin " + OriginValidate.messageOriginValidate().answeredBy(theActorInTheSpotlight()));
+        System.out.println("You correctly selected your destination " + DestinyValidate.messageDestinyValidate().answeredBy(theActorInTheSpotlight()));
     }
 }

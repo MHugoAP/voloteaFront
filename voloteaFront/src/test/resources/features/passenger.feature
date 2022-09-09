@@ -8,10 +8,11 @@ Feature: Enter Passengers
     Given enter the volotea official page
     And accept cookies and selct the button Passagers
     When the user clicks the plus button to select more passengers '<adult>', '<child>', '<baby>'
-    Then validate that the number of passengers is well selected
+    Then validate that the number of passengers is well selected Reservas de grupos
 
     Examples:
       | adult | child | baby |
       | 1     | 1     | 1    |
       | 4     | 2     | 4    |
       | 6     | 4     | 6    |
+      | 8     | 2     | 4    |

@@ -2,10 +2,13 @@ package com.speedup.qa.userinterface;
 
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class OriginInterface {
-
+    @Managed
+    private WebDriver myBrowser;
     public static final Target CLIC_WRITE_ORIGIN = Target
             .the("Write the origin")
             .located(By.xpath("//input[@id='origin']"));
@@ -26,10 +29,11 @@ public class OriginInterface {
 
     public static final Target ENTER_BY_GROUP_TARGET = Target
             .the("validate that groups can be booked")
-            .located(By.className("v7-rounded v7-rounded--feedback"));
+            .located(By.xpath("//span[@class='v7-rounded__text v7-rounded__text--xs']"));
     public static final By VALIDATE_NUMBER_ADULT = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[1]");
 
     public static final By VALIDATE_NUMBER_CHILD = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[2]");
 
     public static final By VALIDATE_NUMBER_BABY = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[3]");
+
 }

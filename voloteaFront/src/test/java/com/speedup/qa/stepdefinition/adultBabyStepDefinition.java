@@ -2,10 +2,12 @@ package com.speedup.qa.stepdefinition;
 
 import com.speedup.qa.questions.SelectAdult;
 import com.speedup.qa.questions.SelectBaby;
+import com.speedup.qa.questions.SelectGroup;
 import com.speedup.qa.task.Adult;
 import com.speedup.qa.task.Baby;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -22,9 +24,13 @@ public class adultBabyStepDefinition {
             OnStage.theActorInTheSpotlight().attemptsTo(Baby.baby());
         }
     }
-    @Then("^we validate the number of passengers$")
-    public void weValidateTheNumberOfPassengers() {
+    @Then("^we validate the number of passengers (.*)$")
+    public void weValidateTheNumberOfPassengers(String reserva) {
         System.out.println("Selected Adults on the website " + SelectAdult.nessageSelectAdult().answeredBy(theActorInTheSpotlight()));
         System.out.println("Selected Babies on the website " + SelectBaby.messageSelectBaby().answeredBy(theActorInTheSpotlight()));
+        if (reserva == reserva) {
+            OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(SelectGroup.messageSelectGroup(), org.hamcrest.Matchers.is(reserva)));
+            System.out.println("It is possible to make a group reservation");
+        }
     }
 }

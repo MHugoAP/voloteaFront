@@ -15,11 +15,11 @@ public class PassageInterface {
 
     public static final Target ENTER_PlUS_ADULT = Target
             .the("press the button to add more adults")
-            .located(By.xpath("(//*[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[1]"));
+            .located(By.xpath("(//span[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[1]"));
 
     public static final Target ENTER_PlUS_CHILD = Target
             .the("press the button to add more adults")
-            .located(By.xpath("(//*[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[2]"));
+            .located(By.xpath("(//span[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[2]"));
 
     public static final Target ENTER_PlUS_CHILD_VERSION2 = Target
             .the("press the button to add more adults")
@@ -31,5 +31,5 @@ public class PassageInterface {
 
     public static final Target ENTER_PlUS_BABY = Target
             .the("press the button to add more adults")
-            .located(By.xpath("(//*[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[3]"));
+            .located(By.xpath("(//span[@class='v7-btn-circle v7-btn-circle--sm v7-u-cursor-pointer'])[3]"));
 }

@@ -15,7 +15,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class adultBabyStepDefinition {
 
     @When("^the user clicks the plus button to select more passengers '(\\d+)', '(\\d+)'$")
-    public void theUserClicksThePlusButtonToSelectMorePassengers(int arg1, int arg2) {
+    public void theUserClicksThePlusButtonToSelectMorePassengers(int arg1, int arg2){
         for (int i = 1; i < arg1; i++) {
             OnStage.theActorInTheSpotlight().attemptsTo(Adult.adult());
         }
@@ -24,13 +24,28 @@ public class adultBabyStepDefinition {
             OnStage.theActorInTheSpotlight().attemptsTo(Baby.baby());
         }
     }
-    @Then("^we validate the number of passengers (.*)$")
+    /*
+    @Then("^we validate the number of passengers$")
     public void weValidateTheNumberOfPassengers(String reserva) {
         System.out.println("Selected Adults on the website " + SelectAdult.nessageSelectAdult().answeredBy(theActorInTheSpotlight()));
         System.out.println("Selected Babies on the website " + SelectBaby.messageSelectBaby().answeredBy(theActorInTheSpotlight()));
-        if (reserva == reserva) {
+        if (reserva.equals(reserva)){
             OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(SelectGroup.messageSelectGroup(), org.hamcrest.Matchers.is(reserva)));
             System.out.println("It is possible to make a group reservation");
+        }else{
+            System.out.println("The element is not visible");
+        }
+    }*/
+    @Then("^we validate the number of passengers '(\\d+)', '(\\d+)' (.*)$")
+    public void weValidateTheNumberOfPassengers(int arg1, int arg2, String reserva) throws InterruptedException {
+        int total = arg1 + arg1;
+        System.out.println("Selected Adults on the website " + SelectAdult.nessageSelectAdult().answeredBy(theActorInTheSpotlight()));
+        System.out.println("Selected Babies on the website " + SelectBaby.messageSelectBaby().answeredBy(theActorInTheSpotlight()));
+        if (arg1 > 9 || arg2 > 9 || total > 9){
+            OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(SelectGroup.messageSelectGroup(), org.hamcrest.Matchers.is(reserva)));
+            System.out.println("It's possible to make a group reservation");
+        }else{
+            System.out.println("It is not possible to make a group reservation");
         }
     }
 }

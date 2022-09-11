@@ -18,4 +18,4 @@ Feature: Enter Origin Destiny
       | 2     | 2     | 2    | "Tlemcen"  | "asdfgh"    |
       | 3     | 2     | 3    | "Zaragoza" | "merosdooe" |
       | 5     | 5     | 5    | "Limoges"  | "Ajaccio"   |
-      | 12    | 12    | 11   | "KLX"      | "CDG"       |
+      | 12    | 10    | 11   | "KLX"      | "CDG"       |

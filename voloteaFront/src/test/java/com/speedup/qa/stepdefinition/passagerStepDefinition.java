@@ -59,14 +59,17 @@ public class passagerStepDefinition extends PageObject {
         }
     }
 
-    @Then("^validate that the number of passengers is well selected (.*)$")
-    public void validateThatTheNumberOfPassengersIsWellSelected(String reserva) {
+    @Then("^validate that the number of passengers is well selected '(\\d+)', '(\\d+)', '(\\d+)' (.*)$")
+    public void validateThatTheNumberOfPassengersIsWellSelected(int arg1, int arg2, int arg3, String reserva) {
+        int total = arg1 + arg1;
         System.out.println("Selected Adults on the website " + SelectAdult.nessageSelectAdult().answeredBy(theActorInTheSpotlight()));
         System.out.println("Selected Children on the website " + SelectChild.messageSelectChild().answeredBy(theActorInTheSpotlight()));
         System.out.println("Selected Babies on the website " + SelectBaby.messageSelectBaby().answeredBy(theActorInTheSpotlight()));
-        if (reserva == reserva) {
+        if (arg1 > 9 || arg2 > 9 || total > 9){
             OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(SelectGroup.messageSelectGroup(), org.hamcrest.Matchers.is(reserva)));
-            System.out.println("It is possible to make a group reservation");
+            System.out.println("It's possible to make a group reservation");
+        }else{
+            System.out.println("It is not possible to make a group reservation");
         }
     }
 }

@@ -51,4 +51,6 @@ public class OriginInterface {
 
     public static final By VALIDATE_NUMBER_BABY = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[3]");
 
+    public static final By VALIDATE_NUMBER_BABY_ADULT = By.xpath("(//*[@class='v7-passenger__number ng-star-inserted'])[2]");
+
 }

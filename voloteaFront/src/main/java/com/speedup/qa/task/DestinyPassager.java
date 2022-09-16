@@ -1,5 +1,6 @@
 package com.speedup.qa.task;
 
+import com.speedup.qa.interaction.WaitInteraction;
 import com.speedup.qa.models.DestinyData;
 import com.speedup.qa.models.OriginData;
 import net.serenitybdd.screenplay.Actor;
@@ -20,7 +21,7 @@ public class DestinyPassager implements Task {
     @Override
     public <T extends Actor> void performAs(T actorDestiny) {
         actorDestiny.attemptsTo(Click.on(CLIC_WRITE_DESTINY));
-        actorDestiny.attemptsTo(Enter.theValue(destinyDataInstance.getDestiny()).into(CLIC_WRITE_DESTINY));
+        actorDestiny.attemptsTo(Enter.theValue(destinyDataInstance.getDestiny()).into(CLIC_WRITE_DESTINY), WaitInteraction.waitFor(3));
     }
 
     public static DestinyPassager withTheData(DestinyData destinyData){
